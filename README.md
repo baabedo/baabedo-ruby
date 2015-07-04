@@ -59,6 +59,7 @@ If you want to request a new feature in the API, please create an issue first. :
 
 ## Thank you
 
-A hugh thank you to the Stripe team for stripe-ruby!
+A huge thank you to the Stripe team for stripe-ruby!
+
 This gem is based on [stripe-ruby](https://github.com/stripe/stripe-ruby)
 at [8ba1a0e4908cccf20198791aa8f72acc63575589](https://github.com/stripe/stripe-ruby/tree/8ba1a0e4908cccf20198791aa8f72acc63575589)
