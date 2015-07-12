@@ -21,7 +21,7 @@ module Baabedo
           Baabedo.access_token = save[:access_token]
           Baabedo.api_base = save[:api_base]
           Baabedo.api_version = save[:api_version]
-          Baabedo.verify_ssl_certsapi_version = save[:verify_ssl_certs]
+          Baabedo.verify_ssl_certs = save[:verify_ssl_certs]
         end
       end
     end
