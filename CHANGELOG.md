@@ -1,6 +1,13 @@
 Next (?/?/?)
 ==================
 
+0.0.3 (12/07/2015)
+==================
+
+#### Fixes
+
+* Fixed namespace conficts. If a `Company` class existed, the client tried to construct that instead of a `Baabedo::Company`
+
 0.0.2 (12/07/2015)
 ==================
 
