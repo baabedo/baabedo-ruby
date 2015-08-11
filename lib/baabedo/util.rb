@@ -51,8 +51,8 @@ module Baabedo
     def self.class_for_type(type)
       if type =~ /^list\./
         ListObject
-      elsif Kernel.const_defined?(camelize(type))
-        Kernel.const_get(camelize(type))
+      elsif Kernel.const_defined?("::Baabedo::#{camelize(type)}")
+        Kernel.const_get("::Baabedo::#{camelize(type)}")
       else
         APIObject
       end
