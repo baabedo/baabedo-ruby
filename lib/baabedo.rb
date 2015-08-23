@@ -96,7 +96,7 @@ module Baabedo
       if headers[:content_type] && headers[:content_type] == "multipart/form-data"
         payload = params
       else
-        payload = uri_encode(params)
+        payload = JSON.generate(params)
       end
     end
 
@@ -169,7 +169,7 @@ module Baabedo
     begin
       error_obj = JSON.parse(rbody)
       error_obj = Util.symbolize_names(error_obj)
-      error = error_obj[:error] or raise BaabedoError.new # escape from parsing
+      error = error_obj or raise BaabedoError.new # escape from parsing
 
     rescue JSON::ParserError, BaabedoError
       raise general_api_error(rcode, rbody)

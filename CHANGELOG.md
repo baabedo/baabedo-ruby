@@ -1,6 +1,11 @@
 Next (?/?/?)
 ==================
 
+#### Fixes
+
+* Use PUT for resource updates.
+* Fixed some error handling.
+
 0.0.3 (12/07/2015)
 ==================
 

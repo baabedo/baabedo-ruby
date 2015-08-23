@@ -7,7 +7,7 @@ module Baabedo
         if values.length > 0
           values.delete(:id)
 
-          response, opts = request(:post, url, values)
+          response, opts = request(:put, url, values)
           refresh_from(response, opts)
         end
         self
