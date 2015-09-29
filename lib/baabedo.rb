@@ -42,7 +42,7 @@ module Baabedo
   @verify_ssl_certs = true
 
   class << self
-    attr_accessor :access_token, :api_base, :verify_ssl_certs, :api_version
+    attr_accessor :access_token, :api_base, :verify_ssl_certs, :api_version, :proxy
   end
 
   def self.api_url(url='', api_base_url=nil)

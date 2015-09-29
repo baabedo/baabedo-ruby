@@ -1,6 +1,9 @@
 Next (?/?/?)
 ==================
 
+#### Features
+
+* Added `proxy` option to allow RestClient http proxies.
 
 0.0.4 (23/08/2015)
 ==================
