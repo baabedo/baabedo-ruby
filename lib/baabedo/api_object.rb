@@ -131,7 +131,7 @@ module Baabedo
         new_keys = update.keys.map(&:to_sym)
 
         # remove keys at the server, but not known locally
-        if @original_values.include?(key)
+        if @original_values && @original_values.include?(key)
           keys_to_unset = @original_values[key].keys - new_keys
           keys_to_unset.each {|key| update[key] = ''}
         end

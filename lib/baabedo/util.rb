@@ -49,6 +49,7 @@ module Baabedo
     end
 
     def self.class_for_type(type)
+      return APIObject if type.nil?
       if type =~ /^list\./
         ListObject
       elsif Kernel.const_defined?("::Baabedo::#{camelize(type)}")

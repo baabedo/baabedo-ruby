@@ -16,4 +16,3 @@ describe Baabedo::Client do
     expect(Baabedo.access_token).to eq('originaltoken')
   end
 end
-

@@ -11,7 +11,12 @@ module Baabedo
         raise NotImplementedError.new('APIResource is an abstract class.  You should perform actions on its subclasses (Charge, Customer, etc.)')
       end
       type_endpoint = CGI.escape(class_name.downcase)
-      type_endpoint = type_endpoint.gsub(/y$/, 'ies') # pluralize for companies
+      case type_endpoint
+      when /y$/
+        type_endpoint = type_endpoint.gsub(/y$/, 'ies') # pluralize for companies
+      else
+        type_endpoint = "#{type_endpoint}s"
+      end
       "/#{Baabedo.api_version}/#{type_endpoint}"
     end
 

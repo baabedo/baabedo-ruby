@@ -24,7 +24,7 @@ Or install it yourself as:
 
 Simple usage:
 
-```
+```ruby
 Baabedo.access_token = 'xxxxxxxxxxxxx'
 
 Baabedo::Channel.all # list all channels
@@ -32,7 +32,7 @@ Baabedo::Channel.all # list all channels
 
 Advanced usage if you need to handle different access_tokens
 
-```
+```ruby
 client = Baabedo::Client.new
 client.access_token = 'xxxxxxxxxxxxx'
 
@@ -40,7 +40,21 @@ client.access_token = 'xxxxxxxxxxxxx'
 client.use do
   Baabedo::Channel.all
 end
+```
 
+### Orders
+
+Retrieving a order of a channel:
+```ruby
+order = Baabedo::Order.retrieve('3ea8cd7e9d16e5f5799d9c5f', channel_id: '2d2222fedbdf2dad')
+```
+
+Updating a order without fetching it first:
+
+```ruby
+order = Baabedo::Order.new('3ea8cd7e9d16e5f5799d9c5f', channel_id: '2d2222fedbdf2dad')
+order.custom = { foo: 'bar' }
+order.save
 ```
 
 ## Contributing

@@ -21,7 +21,10 @@ require 'baabedo/api_object'
 require 'baabedo/api_resource'
 require 'baabedo/list_object'
 
-require 'baabedo/company'
+require 'baabedo/money'
+
+require 'baabedo/channel'
+require 'baabedo/order'
 
 # Errors
 require 'baabedo/errors/baabedo_error'
@@ -140,7 +143,7 @@ module Baabedo
     headers = {
       :user_agent => "Baabedo/v1 RubyBindings/#{Baabedo::VERSION}",
       :authorization => "Bearer #{access_token}",
-      :content_type => 'application/x-www-form-urlencoded'
+      :content_type => 'application/json'
     }
   end
 
