@@ -3,6 +3,8 @@ module Baabedo
     module Create
       module ClassMethods
         def create(params={}, opts={})
+          url = build_url(params) if respond_to?(:build_url)
+
           response, opts = request(:post, url, params, opts)
           Util.convert_to_api_object(response, opts)
         end

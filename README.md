@@ -49,6 +49,12 @@ Retrieving a order of a channel:
 order = Baabedo::Order.retrieve('3ea8cd7e9d16e5f5799d9c5f', channel_id: '2d2222fedbdf2dad')
 ```
 
+Search for orders:
+
+```ruby
+orders = Baabedo::Order.search('custom.amazon.order_id: "0323-2323-fake"', channel_id: '5d49f30b9daa5bb7')
+```
+
 Updating a order without fetching it first:
 
 ```ruby

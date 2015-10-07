@@ -4,7 +4,8 @@ Next (?/?/?)
 #### Features
 
 * Added `proxy` option to allow RestClient http proxies.
-* Added Baabedo::Order. (list/search is still missing)
+* Added Baabedo::Order
+* Added search action (pagination is missing)
 
 0.0.4 (23/08/2015)
 ==================

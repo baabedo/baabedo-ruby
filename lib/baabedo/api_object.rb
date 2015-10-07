@@ -125,6 +125,9 @@ module Baabedo
       end
 
       if @unsaved_values.include?(key)
+        # TODO: this doesn't really work for us
+        # taking a resource from a list response and adding a custom attribute to it will throw an exception
+
         # the object has been reassigned
         # e.g. as object.key = {foo => bar}
         update = new_value

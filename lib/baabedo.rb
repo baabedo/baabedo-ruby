@@ -14,6 +14,7 @@ require 'baabedo/api_operations/create'
 require 'baabedo/api_operations/update'
 require 'baabedo/api_operations/delete'
 require 'baabedo/api_operations/list'
+require 'baabedo/api_operations/search'
 require 'baabedo/api_operations/request'
 # Resources
 require 'baabedo/util'

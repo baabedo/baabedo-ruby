@@ -15,6 +15,54 @@ describe Baabedo::Order do
     end
   end
 
+  it 'resources url from params' do
+    client = Baabedo::Client.new
+    client.api_base = 'http://example.com'
+    client.api_version = 'test'
+    client.use do
+      url = Baabedo::Order.build_url(channel_id: '2d2222fedbdf2dad')
+      expect(url).to eq('/test/channels/2d2222fedbdf2dad/orders')
+    end
+  end
+
+  it 'search url' do
+    client = Baabedo::Client.new
+    client.access_token = 'xxx'
+    client.api_base = 'http://example.com'
+    client.api_version = 'test'
+
+    res_body = JSON.parse('
+      { "type": "list.order",
+        "data": [
+        {
+            "type": "order",
+            "channel_id": "2d2222fedbdf2dad",
+            "created_at": 1443541843,
+            "custom": null,
+            "extra_price": null,
+            "id": "3ea8cd7e9d16e5f5799d9c5f",
+            "items_price": null,
+            "order_items": null,
+            "purchased_at": 1443541250,
+            "shipping_price": null,
+            "status": "open",
+            "status_updated_at": 0,
+            "taxes_price": null,
+            "total_price": null,
+            "updated_at": 1443541843
+        }]
+      }')
+
+    stub = stub_request(:get, "http://example.com/test/channels/2d2222fedbdf2dad/orders/_search?query=foo").
+      to_return(body: res_body.to_json)
+
+    client.use do
+      Baabedo::Order.search('foo', channel_id: '2d2222fedbdf2dad')
+    end
+
+    expect(stub).to have_been_requested
+  end
+
   it 'can update status without fetching first' do
     client = Baabedo::Client.new
     client.access_token = 'xxx'
