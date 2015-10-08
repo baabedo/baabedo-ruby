@@ -12,9 +12,16 @@ module Baabedo
       @json_body = json_body
     end
 
+    def request_id
+      @json_body[:id]
+    rescue
+      nil
+    end
+
     def to_s
       status_string = @http_status.nil? ? "" : "(Status #{@http_status}) "
-      "#{status_string}#{@message}"
+      id_string = "; Request-Id: #{request_id}" unless request_id.nil?
+      "#{status_string}#{@message}#{id_string}"
     end
   end
 end

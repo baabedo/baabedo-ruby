@@ -6,6 +6,7 @@ Next (?/?/?)
 * Added `proxy` option to allow RestClient http proxies.
 * Added Baabedo::Order
 * Added search action (pagination is missing)
+* Show Request-Id in error if present
 
 0.0.4 (23/08/2015)
 ==================
